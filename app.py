@@ -32,19 +32,17 @@ st.markdown("""
 st.header("Phase 1: Data Understanding and Exploratory Data Analysis (EDA)")
 
 st.subheader("1.1. Initial Data Inspection")
-st.write("First 5 rows of the dataset:")
-st.write(df.head())
+st.write("First 100 rows of the dataset:")
+st.write(df.head(100))
 st.write("Dataset Info:")
 st.text(df.info())
-st.write("Missing Values:")
-st.write(df.isnull().sum())
 st.write("Descriptive Statistics:")
 st.write(df.describe())
 
 st.subheader("1.2. Visualizing Data Distributions")
 numerical_features = ['feedback_loop', 'directive', 'task_iteration', 'validation', 'learning', 'filtered']
 fig, axes = plt.subplots(2, 3, figsize=(15, 6))
-df[numerical_features].hist(bins=15, ax=axes)
+df[numerical_features].hist(bins=15, ax=axes , layout='tight', color='skyblue', edgecolor='black')
 plt.suptitle('Distribution of Numerical Features')
 st.pyplot(fig)
 
@@ -97,8 +95,8 @@ for k in range(1, 11):
     kmeans.fit(scaled_features)
     inertia.append(kmeans.inertia_)
 
-fig, ax = plt.subplots(figsize=(8, 5))
-ax.plot(range(1, 11), inertia, marker='o')
+fig, ax = plt.subplots(figsize=(8, 5) , dpi=100, facecolor='w', edgecolor='k', tight_layout=True)
+ax.plot(range(1, 11), inertia, marker='o', linestyle='--', color='red')
 plt.xlabel('Number of clusters')
 plt.ylabel('Inertia')
 plt.title('Elbow Method for Optimal k')
