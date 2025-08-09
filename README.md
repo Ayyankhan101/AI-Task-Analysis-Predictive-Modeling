@@ -65,6 +65,24 @@ This will open the notebook in your web browser. You can then execute the cells 
 *   The model achieved an accuracy of **50.67%** on the test set.
 *   The classification report shows that the model performs differently for each cluster, with precision and recall values varying across the four classes. The confusion matrix visually represents the model's prediction accuracy for each cluster.
 
+## Streamlit Dashboard
+
+To visualize the analysis in an interactive dashboard, you can run the Streamlit app:
+
+1.  **Install the dependencies:**
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+2.  **Run the app:**
+
+    ```bash
+    streamlit run app.py
+    ```
+
+This will open the dashboard in your web browser.
+
 ## Conclusion
 
 This project successfully analyzed the `AI_DATA.csv` dataset, uncovering key characteristics of AI-related tasks. Through clustering, we identified four distinct types of tasks within the data. Furthermore, we built a predictive model that can classify new tasks with an accuracy of over 50%, which is a good starting point for a baseline model. The analysis provides valuable insights into the nature of AI tasks and demonstrates the power of combining NLP and clustering techniques for task categorization.
